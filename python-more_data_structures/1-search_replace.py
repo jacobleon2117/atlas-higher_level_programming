@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-def search_replace(my_list, search, replace):
-    my_list = [1, 2, 3, 4, 5, 4, 4, 4, 6]
-    for item in my_list:
-            if item == 4:
-                my_list[my_list.index(item)] = 44
-    print (my_list)
-        
+def search_replace(list, search, replace):
+    new_list = []
+    for i in list:
+        if i == search:
+            new_list.append(replace)
+        else:
+            new_list.append(i)
+    return new_list

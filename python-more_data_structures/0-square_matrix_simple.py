@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+def sqr(i):
+    res = i * i
+    return res
 
-def spr(i):
-    square = i * i
-    return square
-
-def  square_matrix_simple(matrix):
+def square_matrix_simple(matrix):
     new_matrix = []
     for i in range(len(matrix)):
-        new_matrix.append(list(map(spr, matrix[i])))
-        return new_matrix
+        new_matrix.append(list(map(sqr, matrix[i])))
+    return new_matrix
