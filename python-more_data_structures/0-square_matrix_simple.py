@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def spr(i):
     square = i * i
     return square
