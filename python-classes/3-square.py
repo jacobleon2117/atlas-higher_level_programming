@@ -11,7 +11,7 @@ class square:
     """
     def __init__(self, size=0):
         """
-        Constructor for the square class.
+        The constructor for the square class.
         
         Parameters:
         size (int): Size of the square.
