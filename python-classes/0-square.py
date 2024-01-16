@@ -5,7 +5,7 @@ This module contains the class for square
 """
 
 
-class square:
+class Square:
     """
-    Def of the square class (object)
+    Defining of the square class (object)
     """
