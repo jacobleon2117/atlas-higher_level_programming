@@ -31,4 +31,3 @@ class Square:
             the square area of the calling instance of Square
         """
         return self.__size * self.__size
-        
