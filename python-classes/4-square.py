@@ -24,3 +24,24 @@ class Square:
         Getter for size attribute.
         """
         return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for size attribute.
+
+        Args:
+            value: the value to set as size
+        """
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    def area(self):
+        """
+        A method of the class that finds area.
+        """
+        return self.__size ** 2
