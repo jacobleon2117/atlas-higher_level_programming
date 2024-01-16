@@ -5,15 +5,15 @@ Module that defines a class square with an attribute size.
 """
 
 
-class square:
+class Square:
     """
-    Square class with an attribute.
+    Square class with an size attribute.
     """
     def __init__(self, size):
         """
-        Constructor for the square class.
+        Constructor for the Square class.
         
         Parameters:
-        size (int): Size of the square.
+        size (int): The size of the square.
         """
         self.size = size
