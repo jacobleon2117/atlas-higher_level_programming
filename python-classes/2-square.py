@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module that defines a class square with an attribute size.
+This module defines a class Square with an attribute size.
 """
 
 
@@ -11,14 +11,14 @@ class Square:
     """
     def __init__(self, size=0):
         """
-        The constructor for the square class.
-        
+        The constructor for the Square class.
+
         Parameters:
-        size (int): Size of the square.
+        size (int): The size of the square.
         """
         if type(size) is not int:
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         elif size < 0:
-            raise ValueError("Size must be >= 0")
+            raise ValueError("size must be >= 0")
         else:
             self.__size = size
