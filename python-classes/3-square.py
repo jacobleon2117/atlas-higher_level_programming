@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 """
-Module that defines a class square with an attribute size.
+This module that defines a class square with an attribute size.
 """
 
 
 class square:
     """
-    Square class with an attribute.
+    The square class with an attribute.
     """
     def __init__(self, size=0):
         """

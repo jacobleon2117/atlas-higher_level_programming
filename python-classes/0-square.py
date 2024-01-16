@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module contains the class for square
+This module that defines a class square with an attribute size.
 """
 
 
