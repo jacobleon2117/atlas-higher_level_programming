@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 
 """
-This module defines a class Square with an attribute size.
+This module contains the definition of a Square class with a size attribute
 """
 
 
 class Square:
     """
-    The Square class with a size attribute.
+    A Square class with a private size attribute
     """
     def __init__(self, size=0, position=(0, 0)):
         """
-        The constructor for the Square class.
+        the __init__ method for the Square class
 
-        Parameters:
-        size (int): The size of the square.
+        Args:
+            size (int): the size of the Square
         """
         self.size = size
         self.position = position
@@ -22,17 +22,17 @@ class Square:
     @property
     def size(self):
         """
-        Getter for size attribute.
+        Getter for size private attribute
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Setter for size attribute.
+        Setter for size private attribute
 
         Args:
-            value: the value to set as size
+            value: the value to set size as
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -44,45 +44,49 @@ class Square:
     @property
     def position(self):
         """
-        Getter for position attribute.
+        getter for position attribute
         """
         return self.__position
 
     @position.setter
     def position(self, value):
         """
-        Setter for position attribute
+        setter for position attribute
 
         Args:
-            value: value to set as position
+            value: the value to set position as
         """
-        error = "position must be a tuple of 2 positive integers"
+        err_msg = "position must be a tuple of 2 positive integers"
         if type(value) is not tuple or len(value) != 2:
-            raise TypeError(error)
+            raise TypeError(err_msg)
         for i in value:
             if (type(i) is int and i < 0) or type(i) is not int:
-                raise TypeError(error)
+                raise TypeError(err_msg)
+
         else:
             self.__position = value
 
     def area(self):
         """
-        A method of the class that finds area.
+        A method of Square that returns the square area
+
+        Return:
+            the square area of the calling instance of Square
         """
-        return self.size ** 2
+        return self.size * self.size
 
     def my_print(self):
         """
-        Prints the area and position.
+        print the area and position of the square
         """
         if self.size < 1:
             print("")
         else:
-            for i in range(self.position[1]):
+            for y in range(self.position[1]):
                 print("")
-            for j in range(self.size):
+            for i in range(self.size):
                 for x in range(self.position[0]):
                     print(" ", end="")
-                for y in range(self.size):
+                for j in range(self.size):
                     print("#", end="")
                 print("")
