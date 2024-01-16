@@ -6,7 +6,5 @@ This module that defines a class square with an attribute size.
 
 
 class Square:
-    """
-    The Square class with a size attribute.
-    """
-    
+    """The Square class with a size attribute.
+    """    
