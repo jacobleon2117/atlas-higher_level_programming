@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Module - a SQL Alchemy query to delete all rows containing 'a'
+Module containing a SQL Alchemy query to delete all rows containing 'a'
 """
 from sqlalchemy import create_engine, delete
 from sqlalchemy.orm import sessionmaker
