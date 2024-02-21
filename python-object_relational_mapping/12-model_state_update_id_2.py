@@ -5,7 +5,7 @@ Module - a SQL Alchemy query to update the name of an entry
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State, City
+from model_state import Base, State
 from sys import argv
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ Module - a SQL Alchemy query to add a state to database
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import Base, State, City
 from sys import argv
 
 if __name__ == '__main__':
