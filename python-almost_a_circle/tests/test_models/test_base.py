@@ -1,54 +1,61 @@
 #!/usr/bin/python3
 
+"""Defines unittests for base.py."""
 import unittest
-from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-from io import StringIO
-import sys
+
+class TestBase_create(unittest.TestCase):
+    """Unittests for testing create method of Base class."""
+
+    def test_create_rectangle_original(self):
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
+
+    def test_create_rectangle_new(self):
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r2))
+
+    def test_create_rectangle_is(self):
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertIsNot(r1, r2)
+
+    def test_create_rectangle_equals(self):
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertNotEqual(r1, r2)
+
+    def test_create_square_original(self):
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual("[Square] (7) 5/1 - 3", str(s1))
+
+    def test_create_square_new(self):
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual("[Square] (7) 5/1 - 3", str(s2))
+
+    def test_create_square_is(self):
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertIsNot(s1, s2)
+
+    def test_create_square_equals(self):
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertNotEqual(s1, s2)
 
 
-class TestBaseAttributes(unittest.TestCase):
-    def test_id_assignment(self):
-        self.assertEqual(Base._Base__nb_objects, 0)
-        test_obj = Base()
-        self.assertEqual(test_obj.id, 1)
-
-    def test_custom_id(self):
-        id_obj = Base(89)
-        self.assertEqual(id_obj.id, 89)
-
-class TestJSONStringMethod(unittest.TestCase):
-    def test_empty(self):
-        self.assertEqual(Base.to_json_string(None), "[]")
-
-    def test_non_dict(self):
-        self.assertEqual(Base.to_json_string([1, 2, 3]), "[1, 2, 3]")
-
-    def test_non_list(self):
-        self.assertEqual(Base.to_json_string(42), "42")
-
-    def test_success(self):
-        rect_1 = Rectangle(4, 5)
-        dict_1 = rect_1.to_dictionary()
-        expected = '[{"id": 2, "width": 4, "height": 5, "x": 0, "y": 0}]'
-        self.assertEqual(Base.to_json_string([dict_1]), expected)
-
-# class TestLoadFileMethod(unittest.TestCase):
-
-class TestFromJSONMethod(unittest.TestCase):
-    def test_none_param(self):
-        presumably_empty = Base.from_json_string(None)
-        self.assertEqual(presumably_empty, [])
-
-    def test_empty_param(self):
-        just_empty = Base.from_json_string("[]")
-        self.assertEqual(just_empty, [])
-
-    def test_base_dict(self):
-        base_dict = {'id': 42}
-        dict_list = [base_dict]
-        json_list = Base.to_json_string(dict_list)
-        self.assertEqual(Base.from_json_string(json_list), [{'id': 42}])
-
-# class TestCreateMethod(unittest.TestCase):
+if __name__ == "__main__":
+    unittest.main()
