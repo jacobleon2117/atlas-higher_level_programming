@@ -1,8 +1,11 @@
 #!/usr/bin/node
 
-let count = 0;
+exports.logMe = function(item) {
+    if (typeof exports.logMe.counter === 'undefined') {
+        exports.logMe.counter = 0;
+    }
 
-exports.logMe = function (item) {
-    count++;
-    console.log(`${count}: ${item}`);
+    console.log(exports.logMe.counter + ': ' + item);
+
+    exports.logMe.counter++;
 };
