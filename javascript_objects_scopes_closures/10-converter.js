@@ -1,7 +1,12 @@
 #!/usr/bin/node
 
-let convertToBinary = exports.converter(2);
-console.log(convertToBinary(10));
-
-let convertToHex = exports.converter(16);
-console.log(convertToHex(255));
+exports.converter = function(base) {
+    (function convert(num) {
+        const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        if (num >= base) {
+            convert(Math.floor(num / base));
+        }
+        process.stdout.write(charset[num % base]);
+    })(this);
+    console.log();
+};
