@@ -11,13 +11,10 @@ class Square extends ParentSquare {
         if (c === undefined) {
             c = 'X';
         }
-
-        for (let i = 0; i < this.height; i++) {
-            console.log(c.repeat(this.width));
+        for (let i = 0; i < this.size; i++) {
+            console.log(c.repeat(this.size));
         }
     }
 }
 
-const square = new Square(5);
-square.charPrint();
-square.charPrint('#');
+module.exports = Square;
