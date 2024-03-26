@@ -8,9 +8,9 @@ const findSecondLargest = (arr) => {
 
   const sortedArr = arr.sort((a, b) => b - a);
 
-  let secondLargest = sortedArr[1];
+  const secondLargest = sortedArr[1];
 
-    return secondLargest;
+  return secondLargest;
 };
 
 console.log(findSecondLargest(args));
