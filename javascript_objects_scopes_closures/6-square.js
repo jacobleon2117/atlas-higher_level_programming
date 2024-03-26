@@ -18,7 +18,6 @@ class Square extends ParentSquare {
     }
 }
 
-// Example usage
 const square = new Square(5);
 square.charPrint();
 square.charPrint('#');
