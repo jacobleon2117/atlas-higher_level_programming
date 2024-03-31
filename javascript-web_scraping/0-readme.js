@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 
 function readFile(filePath) {
     console.log('Reading file:', filePath);
