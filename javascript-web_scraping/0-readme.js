@@ -7,7 +7,7 @@ function readFile(filePath) {
             console.error('An error occurred:', err);
             return;
         }
-        const trimmedContent = data.trim(); // Trim leading and trailing whitespace
+        const trimmedContent = data.trim();
         console.log('File content:', trimmedContent);
     });
 }
