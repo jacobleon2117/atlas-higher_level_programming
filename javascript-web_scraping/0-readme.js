@@ -1,13 +1,11 @@
 #!/usr/bin/node
 
-function readFile(filePath) {
-    console.log('Reading file:', filePath);
-    fs.readFile(filePath, 'utf-8', (err, data) => {
-        if (err) {
-            console.error('An error occurred:', err);
-            return;
-        }
-        const trimmedContent = data.trim();
-        console.log('File content:', trimmedContent);
-    });
-}
+const fs = require('fs');
+const { argv } = require('node:process');
+
+fs.readFile(argv[2], (err, data) => {
+  if (err) {
+    throw err;
+  }
+  console.log(data.toString());
+});
